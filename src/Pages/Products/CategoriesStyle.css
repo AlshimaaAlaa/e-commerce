@@ -1,0 +1,209 @@
+:root{
+  --color:#000;
+  --font-family:Acme;
+  --font-familyPhilosopher:Philosopher;
+}
+.electronicsContainer{
+  max-width: 85%;
+  margin: auto;
+  padding: 160px 0px 0px 0px;
+}
+.electronicList{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-items: center;
+  gap: 20px;
+}
+.electronicList__items{
+  width: 330px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+.electronicsContainer__img{
+  width: 100%;
+  height: 250px;
+}
+.electronicsContainer__img img{
+  width: 100%;
+  height: 250px;
+}
+.containers{
+  position: relative;
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+.containers:hover .overlay {
+  height: 100%;
+}
+.text{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top:147px;
+  right:-20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  background-color: #ffffff;
+}
+
+.jeweleryList{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-items: center;
+  gap: 10px;
+}
+.jeweleryList__items{
+  width: 330px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+.jewelerysContainer__img{
+  width: 100%;
+  height: 250px;
+}
+.jewelerysContainer__img img{
+  width: 100%;
+  padding: 20px;
+  height: 250px;
+}
+.jewelerysContainer{
+  max-width: 85%;
+  margin: auto;
+  padding: 160px 0px 0px 0px;
+}
+
+
+.MenClothingList{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-items: center;
+  gap: 10px;
+}
+.MenClothingList__items{
+  width: 330px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+.MenClothingContainer__img{
+  width: 100%;
+  height: 250px;
+}
+.MenClothingsContainer__img img{
+  width: 100%;
+  padding: 20px;
+  height: 250px;
+}
+.MenClothingContainer{
+  max-width: 85%;
+  margin: auto;
+  padding: 160px 0px 0px 0px;
+}
+
+
+.WomenClothingList{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-items: center;
+  gap: 10px;
+}
+.WomenClothingList__items{
+  width: 330px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+.WomenClothingsContainer__img{
+  width: 100%;
+  height: 250px;
+}
+.WomenClothingsContainer__img img{
+  width: 100%;
+  padding: 20px;
+  height: 250px;
+}
+.WomenClothingContainer{
+  max-width: 85%;
+  margin: auto;
+  padding: 160px 0px 0px 0px;
+}
+
+
+
+/* media query */
+/* Mobile : 375px => 768px */
+@media screen and (min-width:100px) and (max-width:375px) {
+  .electronicList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+  .jeweleryList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+  .MenClothingList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+  .WomenClothingList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+}
+@media screen and (min-width:375px) and (max-width:767px) {
+  .electronicList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-1px;
+  }
+  .jeweleryList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+  .MenClothingList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+  .WomenClothingList{
+    grid-template-columns: repeat(1,1fr);
+    margin-left:-10px;
+  }
+}
+/* tablet : 768px => 1024px */
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .electronicList{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .jeweleryList{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .MenClothingList{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .WomenClothingList{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+/* laptop : 1024px => 1440px */
+@media screen and (min-width:1024px) and (max-width:1440px){
+
+}
