@@ -27,7 +27,7 @@ function CategoryDetails() {
       </div>
       <div className='product-detailsItem'>
       <div className='product-details__img'>
-        <img src={ProductDetail.image}/>
+        <img src={ProductDetail.image} alt=''/>
       </div>
       <div className='product-detailsItem__text'>
         <h4>

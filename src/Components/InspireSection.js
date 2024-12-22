@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row , Col } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 function InspireSection() {
   return (
@@ -12,27 +11,27 @@ function InspireSection() {
         <div  className='inspire__items'>
           <div>
           <div className='parent '>
-            <img src='/images/1.PNG'/>
+            <img src='/images/1.PNG' alt=''/>
           </div>
           </div>
           <div>
           <div className='parent'>
-          <img src='/images/2.PNG'/>
+          <img src='/images/2.PNG' alt=''/>
           </div>
           </div>
           <div>
           <div className='parent'>
-          <img src='/images/3.PNG'/>
+          <img src='/images/3.PNG' alt=''/>
         </div>
           </div>
           <div>
           <div className='parent'>
-          <img src='/images/4.PNG'/>
+          <img src='/images/4.PNG' alt=''/>
         </div>
           </div>
           <div>
           <div className='parent'> 
-          <img src='/images/5.PNG' className='img'/>
+          <img src='/images/5.PNG' className='img' alt=''/>
         </div>
           </div>
         </div>

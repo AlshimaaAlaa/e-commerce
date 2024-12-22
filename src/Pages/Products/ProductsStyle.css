@@ -59,10 +59,12 @@ a{
   overflow: hidden;
   width: 100%;
   height: 0;
+  display: none;
   transition: 0.5s ease;
 }
 .containers:hover .overlay {
   height: 100%;
+  display: flex;
 }
 .text{
   color: white;
@@ -77,28 +79,28 @@ a{
   transform: translate(-50%, -50%);
   white-space: nowrap;
   background-color: #ffffff;
-  
 } 
-
 .all{
   border: 1px solid saddlebrown;
   padding: 10px;
-  background-color: transparent;
-  width: 200px;
-  font-weight: bolder;
-  font-family: var(--font-family);
-  text-transform: uppercase;
-  margin-top: 30px;
-  color: var(--color);
-}
-.all:hover{
   background-color: saddlebrown;
+  width: 200px;
+  font-family: Acme;
+  margin-top: 30px;
+  color: #fff;
+}
+.displayAll{
+  color: #fff;
 }
 .all:hover{
-  color: white;
+  background-color: transparent;
+  border: 2px solid saddlebrown;
+}
+.all:hover{
+  color: #000;
 }
 .displayAll:hover{
-  color: white;
+  color: #000;
 }
 .alert-message {
   position: fixed; 
@@ -140,7 +142,7 @@ a{
   background-color: saddlebrown;
   border: 1px solid saddlebrown;
 }
-.link:hover{
+.categories__btn:hover a{
   color: #fff;
 }
 /* end of home products style */
@@ -164,8 +166,15 @@ a{
   justify-content: center;
   padding: 100px 0px 50px 0px;
 }
+.AllproductContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0px 0px 50px 0px;
+}
 .AllproductsContainer__hr{
-  width: 11%;
+  width: 8%;
 }
 .AllproductsContainer h1{
   font-family: var(--font-family);

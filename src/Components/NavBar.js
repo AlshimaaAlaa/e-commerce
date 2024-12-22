@@ -1,21 +1,14 @@
 import React from 'react';
-import "./style.css";
 import { Navbar, Button } from 'react-bootstrap';
 import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
-
+import './style.css'
 function NavBar() {
-  const cart = useContext(CartContext);
-
-  const wishlistCount = cart.wishlistItems ?
-    cart.wishlistItems.reduce((sum, product) => sum + product.quantity, 0) : 0;
-
-  const productCount = cart.cartItems ?
-    cart.cartItems.reduce((sum, product) => sum + product.quantity, 0) : 0;
+  const cart = useContext(CartContext);;
 
   return (
-    <div>
-      <Navbar expand="sm" className='navBar p-3 position-fixed w-100'>
+    <div className='nav'>
+      <Navbar expand="sm" className='navBar p-3 '>
         <Navbar.Brand href='/'>
           <img src='/images/logo.png' className='' width={"120px"} alt="Logo" />
         </Navbar.Brand>
@@ -59,7 +52,7 @@ function NavBar() {
                     transform: "translate(25%, 25%)",
                   }}
                 >
-                  {productCount}
+                  {cart.cartItems.length}
                 </div>
               </Button>
             </a>
@@ -93,7 +86,7 @@ function NavBar() {
                     transform: "translate(25%, 25%)",
                   }}
                 >
-                  {wishlistCount}
+                  {cart.wishlistItems.length}
                 </div>
               </Button>
             </a>

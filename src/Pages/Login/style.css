@@ -30,15 +30,16 @@
 .login-btn{
   border: 1px solid saddlebrown;
   padding: 10px;
-  background-color: transparent;
+  background-color: saddlebrown;
   font-weight: bolder;
+  color: #fff;
   font-family: var(--font-family);
   text-transform: uppercase;
-  width: 150px;
+  width: 100%;
 }
 .login-btn:hover{
-  background-color: saddlebrown;
-  color: white;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
 }
 .btns button{
   padding: 10px;
@@ -71,9 +72,13 @@ h2:hover:after { transform: scaleX(1); }
   margin-left: 20px;
 }
 
+
 /* media query */
 /* Mobile : 375px => 768px */
 @media screen and (min-width:100px) and (max-width:375px) {
+  .login-btn{
+    width: 100%;
+  }
   .login-form{
     width:90%;
   }
@@ -85,9 +90,21 @@ h2:hover:after { transform: scaleX(1); }
   }
   .register-agreed input{
     margin-left: 0px;
+  }
+  .faceherf{
+    font-size: 8px;
+  }
+  .regiser-inputs{
+    flex-direction: column;
   }
 }
 @media screen and (min-width:375px) and (max-width:767px) {
+  .login-btn{
+    width: 100%;
+  }
+  .faceherf{
+    font-size: 10px;
+  }
   .login-form{
     width:90%;
   }
@@ -99,12 +116,21 @@ h2:hover:after { transform: scaleX(1); }
   }
   .register-agreed input{
     margin-left: 0px;
+  }
+  .regiser-inputs{
+    flex-direction: column;
   }
 }
 /* tablet : 768px => 1024px */
 @media screen and (min-width:768px) and (max-width:1024px) {
   .login-form{
     width:80%;
+  }
+  .login-btn{
+    width: 100%;
+  }
+  .regiser-inputs{
+    flex-direction: column;
   }
 }
 /* laptop : 1024px => 1440px */

@@ -1,16 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
 import "./ProductsStyle.css";
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import NewProducts from "./NewProducts";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import NavBar from "../../Components/NavBar/NavBar";
-import Footer from "../../Components/Footer/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-function AllProducts() {
+function NewProducts() {
   const [products, setProducts] = useState([]);
   const cart = useContext(CartContext);
   const [loading, setLoading] = useState(false);
@@ -21,21 +20,22 @@ function AllProducts() {
       setLoading(true);
       try {
         const response = await axios({
-          url: "https://products-blush-phi.vercel.app/products",
+          url: "https://fakestoreapi.com/products",
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
         });
         if (response.status === 200) {
-          setProducts(response.data);
-          setError(false);
           setLoading(false);
+          setProducts(response.data);
         } else {
           setLoading(false);
+          setError(error);
         }
       } catch (error) {
         setLoading(false);
+        setError(error);
         console.error(error);
       }
     }
@@ -49,36 +49,25 @@ function AllProducts() {
 
   const handleAddToWishlist = (product) => {
     cart.AddProductToWishlist(product);
-    toast.success("Product successfully added to Wishlist");
+    toast.success("Product successfully added to wishlist");
   };
 
   return (
     <div>
-      <NavBar />
-      <div className="AllproductsContainer">
-        <h2 className="text-center Our Products mt-5">Our Products</h2>
-        <hr className="AllproductsContainer__hr" />
-        <div className="home-productsItems mt-5">
+      <div className="AllproductContainer mt-0">
+        <div className="home-productsItems mt-0">
           {error ? (
             <div>
               <p
-                className="text-center fw-bolder text-danger"
-                style={{ marginTop: "20px", fontSize: "35px" }}
+                className="text-danger text-center"
+                style={{ fontSize: "35px", marginTop: "30px" }}
               >
-                An error occurred , while fetching data !
+                An error occurred when fetching data !
               </p>
             </div>
           ) : loading ? (
             <div>
-              <p
-                style={{
-                  fontSize: "35px",
-                  marginTop: "20px",
-                  fontFamily: "Satisfy",
-                }}
-              >
-                Loading...
-              </p>
+              <p></p>
             </div>
           ) : (
             <>
@@ -88,7 +77,11 @@ function AllProducts() {
                     <li className="home-productCard__list">
                       <div className="containers">
                         <div className="Allproduct-img d-flex justify-content-center align-items-center">
-                          <img src={product.image} alt="product-img " />
+                          <img
+                            src={product.image}
+                            alt="product-img "
+                            className="p-5"
+                          />
                         </div>
                         <div className="overlay">
                           <div className="text">
@@ -143,7 +136,7 @@ function AllProducts() {
                               }
                             >
                               <Link
-                                to={`/AllProducts/${product.id}`}
+                                to={`/NewProducts/${product.id}`}
                                 className="product-details-link"
                               >
                                 <img
@@ -189,9 +182,7 @@ function AllProducts() {
         </div>
       </div>
       <ToastContainer />
-      <NewProducts />
-      <Footer />
     </div>
   );
 }
-export default AllProducts;
+export default NewProducts;

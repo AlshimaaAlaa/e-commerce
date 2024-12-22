@@ -1,0 +1,40 @@
+.footer {
+  background-color: rgb(45, 20, 0);
+  color: white;
+  padding: 70px 100px 50px 100px;
+}
+.footer-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border-bottom: 1px solid gray; */
+}
+.icons {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+.icons img {
+  width: 30px;
+  cursor: pointer;
+}
+.footer a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Philosopher;
+  color: #8d8b8b;
+}
+.footer h5 {
+  font-family: var(--font-family);
+}
+.p {
+  width: 80%;
+  font-family: var(--font-familyPhilosopher);
+}
+.copyrights {
+  font-family: var(--font-family);
+}
+.logo h1 {
+  margin-top: 20px;
+  font-family: Satisfy;
+}

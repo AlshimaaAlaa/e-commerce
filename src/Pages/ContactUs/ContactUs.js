@@ -1,6 +1,5 @@
 import React from 'react';
 import "./style.css";
-import { Row , Col } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 function ContactUs() {
   return (
@@ -12,7 +11,7 @@ function ContactUs() {
       </Helmet>
       <div className='contact-us mb-5'>
         <div className='map'>
-          <img src='/images/map.PNG'/>
+          <img src='/images/map.PNG' alt=''/>
         </div>
 
         <div className='mt-5 w-100 p-4'>

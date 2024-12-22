@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import "./style.css";
 import { Button, Alert } from 'react-bootstrap';
 import { useShoppingCart } from '../../Context/CartContext';
+import { Link } from 'react-router-dom';
 
-const Cart = () => {
+const Cart=()=>{
   const {
     cartItems,
     AddProductToCart,
@@ -11,96 +12,77 @@ const Cart = () => {
     RemoveAllProductsFromCart,
     RemoveSelectedProduct,
   } = useShoppingCart();
+  
+  const [showMessage , setShowMessage] = useState(false);
+  const handleDeleteSelectedProduct = (item)=>{
+    RemoveSelectedProduct(item);
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  }
 
-  console.log("cartItems:", cartItems);
+  // const [deleteMedssage , setShowDeleteMessage] = useState(false);
+  const handleClearCart = (item)=>{
+    RemoveAllProductsFromCart(item);
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  }
 
-  // Calculate total price
   const totalPrice = cartItems.reduce((total, item) => {
     return total + (item.price * item.quantity);
   }, 0);
-
-  const [deleteItem, setDeleteItem] = useState(false);
-
-  const handleDeleteProduct = (product) => {
-    RemoveAllProductsFromCart(product);
-    setDeleteItem(true);
-    setTimeout(() => {
-      setDeleteItem(false);
-    }, 3000);
-  }
   
-  const [deleteSelctedItem , setDeleteSelctedItem] = useState(false);
-  const handleDeleteSelectedProduct = (product) => {
-    RemoveSelectedProduct(product);
-    setDeleteSelctedItem(true);
-    setTimeout(() => {
-      setDeleteSelctedItem(false);
-    }, 3000);
-  }
-
-  const handleCheckout = () => {
-    alert('Checkout completed!');
-    RemoveAllProductsFromCart();
-  };
-
-  return (
+  return(
     <div className='cart'>
-      {cartItems.length === 0 ?
-        <h1 className='text-center mt-5'>Your Cart is Empty!!</h1>
+      {cartItems.length === 0 ? 
+        <h1 className='mt-5 text-center'>Your Shopping Cart is Empty!!</h1>
         :
-        <>
-          <div>
-            <h1 className='text-center mt-4'>Your Cart!</h1>
-            <div className='d-flex justify-content-center'>
-              <hr className='cart__hr' />
-            </div>
+        <div className=''>
+        <div className='cart__element mt-5'>
+          <div className=' d-flex  justify-content-between'>
+            <h3 style={{fontFamily:"Acme"}}>Shopping Cart</h3>
+            <h3 style={{fontFamily:"Acme"}}>{`(${cartItems.length}) Items`}</h3>
           </div>
-          <ul className='list-unstyled cart-list mt-5'>
-            {cartItems.map((item) => (
-              <li key={item.id} className='cart-list__items d-flex mb-3'>
-                <div className='cartProduct-image'>
-                  <img src={item.image} alt='product-img' className='me-5' />
-                </div>
-                <div className='cart-text'>
-                  <h4 className='' style={{ fontFamily: "Acme" }}>
-                    {item.title.slice(0, 20)}
-                  </h4>
-                  <div className='d-flex'>
-                    <h5 className=''>{`${item.quantity}X`}</h5><h5 className='ms-2'>{`${item.price}`} $</h5>
+          <hr/>
+          <div className=''>
+            <ul className='list-unstyled cart-list mt-5' >
+              {cartItems.map((item)=>(
+                <li key={item.id} className='cart-list__items d-flex justify-content-between mb-5'>
+                  <img className='product-image mt-3' src={item.image} alt='product img' width={'120px'} height={'120px'}/>
+                  <div className='d-flex justify-content-center align-items-center '>
+                    <Button className='me-2' onClick={()=>AddProductToCart(item)} variant='secondary' style={{fontFamily:"Acme"}}>+</Button>
+                    <p className='mt-3 quantity' style={{fontFamily:"Acme"}}>{item.quantity}</p>
+                    <Button className='ms-2' onClick={()=>RemoveProductFromCart(item.id)} variant='secondary'style={{fontFamily:"Acme"}}>-</Button>
                   </div>
-                  <div className='mt-4 cart-buttons'>
-                    <Button variant='light' onClick={() => AddProductToCart(item)} style={{ fontFamily: "Acme" }} className='border-0 cart-btn fs-5'>+</Button>
-                    <Button variant='light' onClick={() => RemoveProductFromCart(item.id)} style={{ fontFamily: "" }} className='fw-bolder border-0 ms-3 cart-btn fs-5'>-</Button>
-                    <div className='delete-div'>
-                      <img src='/images/4041994.png' width={'30px'} height={'30px'} className='cart-deleteProductBtn' onClick={() =>handleDeleteSelectedProduct(item.id)} />
-                    </div>
+                  <h4 className='mt-5 text-center price' style={{fontFamily:"Acme"}}>{`Price: ${item.price} $`}</h4>
+                  <h4 className='mt-5 text-center price'  style={{fontFamily:"Acme"}}>{`Total: ${item.quantity * item.price.toFixed(2)}$`}</h4>
+                  <div className='delete-div mt-1'>
+                    <img src='/images/10147931.png' width={'30px'} height={'30px'} className='  cart-deleteProductBtn ' onClick={() =>handleDeleteSelectedProduct(item.id)} alt='' />
                   </div>
-                </div>
-                <hr />
-              </li>
-            ))}
-          </ul>
-          <div className='cart-clearcheckout'>
-            <h3 style={{ fontFamily: "Acme" }} className='mt-2'>Total Price: {totalPrice.toFixed(2)} $</h3>
-            <Button variant='success' style={{ fontFamily: "Acme" }} className='fs-5 mt-4' onClick={handleCheckout}>Check Out</Button>
-            <Button style={{ fontFamily: "Acme" }} variant='danger' className='fs-5 mt-3' onClick={handleDeleteProduct}>Clear Cart!</Button>
+                  <hr/>
+                </li>
+              ))}
+            </ul>
           </div>
-        </>
+          {/* <hr/> */}
+          <h3 className='mt-5 price' style={{fontFamily:"Acme"}}>{`Totla Price: ${totalPrice}$`}</h3>
+          <div className='d-flex flex-column '>
+            <Button className='fs-5 mt-5' style={{fontFamily:"Acme"}} variant='success' >Checkout</Button>
+            <Button className='fs-5 mt-3'  style={{fontFamily:"Acme"}} variant='danger' onClick={handleClearCart}>Clear Cart</Button>
+          </div>
+          <p className='contiune-shopping fs-5 mt-5' style={{fontFamily:"Acme"}}><Link to={'/AllProducts'}><img src='/images/3183354.png' className='mb-3 me-2' width={'40px'} alt=''/> Contiune Shopping</Link></p>
+        </div>
+      </div>
       }
-      {deleteItem && (
-        <Alert variant="danger" className="alert-deletemessage fs-5" style={{ maxWidth: '360px', fontFamily: "Acme" }}>
-          Products successfully deleted from cart
-        </Alert>
-      )}
-      
-      {deleteSelctedItem && (
+      {showMessage && (
         <Alert variant="danger" className="alert-deletemessage fs-5" style={{ maxWidth: '360px', fontFamily: "Acme" }}>
           Product successfully deleted from cart
         </Alert>
       )}
-
     </div>
-  );
+  )
 }
-
 export default Cart;

@@ -16,22 +16,16 @@ function Register() {
             <h2><Link to={"/Login"} >Sign In</Link></h2>
             <h2><Link to={"/Register"}>Register</Link></h2>
           </div>
-          <label className='mt-3 fw-bolder  text-secondary '>Username or email address*</label>
-          <input type='text'/>
-          <label className='mt-3 fw-bolder  text-secondary '>Password*</label>
-          <input type='password'/>
+          <div className='d-flex w-100 regiser-inputs'>
+              <input type='text' className='mt-5 w-100 me-2' placeholder='Frist Name'/>
+              <input type='text' placeholder='Last Name' className='mt-5 w-100'/>
+          </div>
+        
+          <input type='text' placeholder='Email address' className='mt-4'/>
+          <input type='password' placeholder='Password' className='mt-4'/>
+          <input type='password' placeholder='Confirm Password' className='mt-4'/>
           <div className='d-flex w-100  mt-4 align-items-center justify-content-center  register-credantional'>
             <button className='login-btn'>sign up </button>
-            <div className='register-agreed'>
-              <input type='checkbox' className='' />
-              <label className='ms-2'>I agree to the privacy policy *</label>
-            </div>
-          </div>
-          <hr className='mt-4'/>
-          <p className='mt-1 text-center text-secondary fw-bolder'>or sign in with</p>
-          <div className='btns d-flex justify-content-around mt-3 mb-4'>
-            <button className='w-50 me-3 '><img src="/images/5968764.png" className='face me-2'/>Login With Google</button>
-            <button className='w-50'><img src="/images/download.png" className='face me-3'/>Login With Facebook</button>
           </div>
         </form>
       </div>

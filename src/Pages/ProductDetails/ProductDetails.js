@@ -78,7 +78,7 @@ function ProductDetails() {
               count={5}
               size={24}
               isHalf={true}
-              value={3.5} // Default value (remove quotes)
+              value={5} // Default value (remove quotes)
               // edit={false}
               emptyIcon={<i className="far fa-star"></i>}
               halfIcon={<i className="fa fa-star-half-alt"></i>}
