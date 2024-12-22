@@ -65,6 +65,7 @@ a{
 .containers:hover .overlay {
   height: 100%;
   display: flex;
+  background-color: transparent;
 }
 .text{
   color: white;
@@ -101,30 +102,6 @@ a{
 }
 .displayAll:hover{
   color: #000;
-}
-.alert-message {
-  position: fixed; 
-  top:100px;
-  right: -10%; 
-  transform: translateX(-50%); 
-  z-index: 1050;
-  width: 100%; 
-  padding: 20px;
-  background-color: #28a745;
-  color: white;
-  text-align: center;
-}
-.alert-deletemessage{
-  position: fixed; 
-  top:100px;
-  right: -10%; 
-  transform: translateX(-50%); 
-  z-index: 1050;
-  width: 100%; 
-  padding: 20px;
-  background-color: #c80000;
-  color: white;
-  text-align: center;
 }
 .categories{
   width:55%;

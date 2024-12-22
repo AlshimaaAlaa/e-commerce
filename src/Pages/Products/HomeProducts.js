@@ -103,7 +103,7 @@ function HomeProducts() {
         <div className="text-center">
           <p
             className="text-danger"
-            style={{ marginTop: "80px", fontSize: "35px" , fontFamily:"Satisfy"}}
+            style={{ marginTop: "80px", fontSize: "28px" , fontFamily:"Satisfy"}}
           >
             An error occurred while loading data.
           </p>

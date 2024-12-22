@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllProducts from "./Pages/Products/AllProducts";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 // import Login from './Pages/Login/Login';
-import Register from "./Pages/Login/Register";
+// import Register from "./Pages/Login/Register";
 import { CartProvider } from "./Context/CartContext";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import Cart from "./Pages/Cart/Cart";
@@ -33,6 +33,14 @@ function App() {
             <Route path="/Jewelery" element={<Jewelery />} />
             <Route path="/MenClothing" element={<MenClothing />} />
             <Route path="/WomenClothing" element={<WomenClothing />} />
+            <Route path="NewProducts" element={<NewProducts />} />
+            <Route path="/NewProducts/:id" element={<CategoryDetails />} />
+            <Route path="/Eectronics/:id" element={<CategoryDetails />} />
+            <Route path="/Jewelery/:id" element={<CategoryDetails />} />
+            <Route path="/MenClothing/:id" element={<CategoryDetails />} />
+            <Route path="/WomenClothing/:id" element={<CategoryDetails />} />
+            <Route path="/AllProducts/:id" element={<ProductDetails />} />
+            <Route path="/ContactUs" element={<ContactUs />} />
             {/* <Route path="/Home/AllProducts" element={<AllProducts />} />
               <Route path="/ContactUs" element={<ContactUs />} />
               <Route path="/Login" element={<Login />} />
@@ -40,16 +48,6 @@ function App() {
               <Route path="/AllProducts/:id" element={<ProductDetails />} />
               <Route path="/Cart" element={<Cart />} />
               <Route path="/Wishlist" element={<Wishlist />} />
-              <Route path="/Eectronics" element={<Eectronics />} />
-              <Route path="/Jewelery" element={<Jewelery />} />
-              <Route path="/MenClothing" element={<MenClothing />} />
-              <Route path="/WomenClothing" element={<WomenClothing />} />
-              <Route path="NewProducts" element={<NewProducts />} />
-              <Route path="/NewProducts/:id" element={<CategoryDetails />} />
-              <Route path="/Eectronics/:id" element={<CategoryDetails />} />
-              <Route path="/Jewelery/:id" element={<CategoryDetails />} />
-              <Route path="/MenClothing/:id" element={<CategoryDetails />} />
-              <Route path="/WomenClothing/:id" element={<CategoryDetails />} /> */}
             {/* </Route> */}
           </Routes>
         </BrowserRouter>

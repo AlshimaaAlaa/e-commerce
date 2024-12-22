@@ -1,37 +1,33 @@
 import React from "react";
 import "./NavBar.css";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 function NavBar() {
+  const cart = useContext(CartContext);
   return (
     <div className="navbarContainer">
-      {/* <div className="top-items"> */}
-        <div>
-          <img src="/images/logo.png" className="" width={"100px"} alt="Logo" />
-        </div>
-        <div>
-          <ul className="list">
-            <li>
-              <a href="/Home" className="a">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/AllProducts" className="a">
-                Shop
-              </a>
-            </li>
-            <li>
-              <a href="/ContactUs" className="a">
-                Contact us
-              </a>
-            </li>
-            {/* <li>
-              <a href="/Login" className="a">
-                Login
-              </a>
-            </li> */}
-          </ul>
-        </div>
-      {/* </div> */}
+      <div>
+        <img src="/images/logo.png" className="" width={"100px"} alt="Logo" />
+      </div>
+      <div>
+        <ul className="list">
+          <li>
+            <a href="/Home" className="a">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/AllProducts" className="a">
+              Shop
+            </a>
+          </li>
+          <li>
+            <a href="/ContactUs" className="a">
+              Contact us
+            </a>
+          </li>
+        </ul>
+      </div>
       <div className="bottom-items">
         <div className="">
           <button
@@ -65,7 +61,7 @@ function NavBar() {
                 transform: "translate(25%, 25%)",
               }}
             >
-              0
+              {cart.cartItems.length}
             </div>
           </button>
         </div>
@@ -100,7 +96,7 @@ function NavBar() {
                 transform: "translate(25%, 25%)",
               }}
             >
-              0
+              {cart.wishlistItems.length}
             </div>
           </button>
         </div>

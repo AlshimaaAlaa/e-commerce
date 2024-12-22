@@ -90,7 +90,6 @@ function Jewelery() {
                 <li key={item.id} className="jeweleryList__items">
                   <div
                     className="containers"
-                    style={{ borderBottom: "1px solid lightgray" }}
                   >
                     <div className="jewelerysContainer__img">
                       <img src={item.image} alt={item.title} className="p-5" />
