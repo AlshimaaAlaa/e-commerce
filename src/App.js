@@ -41,6 +41,8 @@ function App() {
             <Route path="/WomenClothing/:id" element={<CategoryDetails />} />
             <Route path="/AllProducts/:id" element={<ProductDetails />} />
             <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Wishlist" element={<Wishlist />} />
             {/* <Route path="/Home/AllProducts" element={<AllProducts />} />
               <Route path="/ContactUs" element={<ContactUs />} />
               <Route path="/Login" element={<Login />} />

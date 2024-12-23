@@ -2,8 +2,10 @@ import React from "react";
 import "./NavBar.css";
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import { useNavigate } from "react-router-dom";
 function NavBar() {
   const cart = useContext(CartContext);
+  const navigate = useNavigate();
   return (
     <div className="navbarContainer">
       <div>
@@ -39,6 +41,7 @@ function NavBar() {
               position: "relative",
             }}
             className="rounded-circle btn-light fw-lighter"
+            onClick={() => navigate("/Cart")}
           >
             <img
               src="/images/3737372.png"
@@ -75,6 +78,7 @@ function NavBar() {
               position: "relative",
             }}
             className="rounded-circle btn-light ms-4"
+            onClick={() => navigate("/Wishlist")}
           >
             <img
               src="/images/heart-love-like-likes-loved-favorite-64.webp"
