@@ -7,28 +7,6 @@
 .cart{
   padding: 100px 0px 50px 0px;
 }
-.cart__element{
-  /* box-shadow: 1px 1px 1px 1px  gray;
-  padding: 30px;
-  max-width: 75%;
-  margin: auto; */
-}
-/* .delete-div{
-  width: 10%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  cursor: pointer;
-}
-.delete-div img{
-  display: none;
-}
-.cart-list__items:hover img{
-  display: flex;
-} */
-
-/* end of cart style  */
-
 
 /* media query */
 /* Mobile : 375px => 768px */

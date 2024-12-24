@@ -1,11 +1,9 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
 import "./WhyShop.css";
 function WhyShop() {
   return (
     <div>
       <div className="whyShop" id="whyShop">
-        {/* <div className=''> */}
         <div>
           <img src="/images/Capture.PNG" className="mb-4 " alt="" />
           <h5 className="fw-bolder">Payment & Delivery</h5>
