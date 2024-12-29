@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import { Button } from "react-bootstrap";
 import { useShoppingCart } from "../../Context/CartContext";
@@ -39,7 +39,7 @@ const Cart = () => {
             Your Shopping Cart is Empty !!
           </h2>
         ) : (
-          <div className="">
+          <div className="cartContainer">
             <div className="cart__element mt-5">
               <h3 className="text-center" style={{ fontFamily: "Acme" }}>
                 Your cart [
@@ -169,43 +169,6 @@ const Cart = () => {
                   </Link>
                 </p>
               </div>
-
-              {/* <hr/> */}
-              {/* <h3
-                className="mt-5 price"
-                style={{ fontFamily: "Acme" }}
-              >{`Totla Price: ${totalPrice}$`}</h3>
-              <div className="d-flex flex-column ">
-                <Button
-                  className="fs-5 mt-5"
-                  style={{ fontFamily: "Acme" }}
-                  variant="success"
-                >
-                  Checkout
-                </Button>
-                <Button
-                  className="fs-5 mt-3"
-                  style={{ fontFamily: "Acme" }}
-                  variant="danger"
-                  onClick={handleClearCart}
-                >
-                  Clear Cart
-                </Button>
-              </div> */}
-              {/* <p
-                className="contiune-shopping fs-5 mt-5"
-                style={{ fontFamily: "Acme" }}
-              >
-                <Link to={"/AllProducts"}>
-                  <img
-                    src="/images/3183354.png"
-                    className="mb-3 me-2"
-                    width={"40px"}
-                    alt=""
-                  />{" "}
-                  Contiune Shopping
-                </Link>
-              </p> */}
             </div>
           </div>
         )}

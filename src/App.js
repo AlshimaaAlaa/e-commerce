@@ -20,8 +20,8 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
+            {/* <Route path="/" element={<Login />} /> */}
+            <Route path="/" element={<Home />} />
             <Route path="/AllProducts" element={<AllProducts />} />
             <Route path="/Eectronics" element={<Eectronics />} />
             <Route path="/Jewelery" element={<Jewelery />} />

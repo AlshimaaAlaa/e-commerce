@@ -14,7 +14,7 @@ function NavBar() {
       <div>
         <ul className="list">
           <li>
-            <a href="/Home" className="a">
+            <a href="/" className="a">
               Home
             </a>
           </li>

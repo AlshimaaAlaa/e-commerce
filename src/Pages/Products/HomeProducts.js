@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./ProductsStyle.css";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -13,6 +13,7 @@ function HomeProducts() {
   const cart = useContext(CartContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchProducts() {
@@ -175,7 +176,6 @@ function HomeProducts() {
                               window.scrollTo({ top: 0, behavior: "smooth" })
                             }
                           >
-                            <Link to={`AllProducts/${product.id}`}>
                               <img
                                 src="/images/download (6).png"
                                 style={{
@@ -183,8 +183,8 @@ function HomeProducts() {
                                   height: "1.5rem",
                                 }}
                                 alt="details-icon"
+                                onClick={()=>navigate(`/AllProducts/${product.id}`)}
                               />
-                            </Link>
                           </Button>
                         </div>
                       </div>

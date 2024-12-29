@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import { Button } from "react-bootstrap";
 import { useShoppingCart } from "../../Context/CartContext";
@@ -24,7 +24,7 @@ const Wishlist = () => {
             Your Wishlist is Empty!!
           </h2>
         ) : (
-          <div className="">
+          <div className="wishlistContainer">
             <div className="cart__element mt-5">
               <h3 className="text-center" style={{ fontFamily: "Acme" }}>
                 Your wishlist
